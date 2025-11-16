@@ -87,8 +87,6 @@ function onDeviceReady() {
     let pictureFail = (err) => {
         navigator.notification.alert("Hubo un error al seleccionar la imagen", nothing, "Error", "Ok")
     }
-
-
 }
 
 function nothing() {}

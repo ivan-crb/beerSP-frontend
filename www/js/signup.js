@@ -37,7 +37,6 @@ function onDeviceReady() {
         }
     })
 
-
     imageField.addEventListener("click", () => {
         navigator.camera.getPicture(pictureSuccess, pictureFail,
             {destinationType: Camera.DestinationType.DATA_URL, sourceType: Camera.PictureSourceType.PHOTOLIBRARY});
@@ -92,8 +91,6 @@ function onDeviceReady() {
         else {
             navigator.notification.alert("Hubo un error al crear la cuenta", nothing, "Error", "Ok")
         }
-        
-
     })
 
     let pictureSuccess = (image) => {

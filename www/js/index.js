@@ -26,8 +26,6 @@ function onDeviceReady() {
             window.open("main-page.html", "_self")
         }
     })
-
 }
-
 
 function nothing() {}
