@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Alta cerveza</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="container">
+                <h1 class="title">BeerSP</h1>
+                <h3 class="subtitle">Alta cerveza</h3>
+                <div class="field-container">
+                    <label for="name-field">Nombre*</label>
+                    <input type="text" class="text-field" id="name-field">
+                </div>
+                <div class="field-container ">
+                    <label for="image-field">Foto*</label>
+                    <button type="button" value="Adjuntar foto" class="image-field" id="image-field">
+                        Adjuntar foto
+                    </button>
+                    <img id="image" class="">
+                </div>
+                <div class="field-container">
+                    <label for="description-field">Breve descripción*</label>
+                    <input type="text" class="text-field" id="description-field">
+                </div>
+                <div class="field-container">
+                    <label for="style-field">Estilo de cerveza*</label>
+                    <select name="style" class="dropdown-field" id="style-field">
+                        <option value="Lager">Lager</option>
+                        <option value="IPA">IPA</option>
+                        <option value="APA">APA</option>
+                        <option value="Stout">Stout</option>
+                        <option value="Saison">Saison</option>
+                        <option value="Porter">Porter</option>
+                        <option value="Pilsner">Pilsner</option>
+                        <option value="Weissbier">Weissbier</option>
+                        <option value="Sour Ale">Sour Ale</option>
+                        <option value="Lambic">Lambic</option>
+                        <option value="Amber Ale">Amber Ale</option>
+                    </select>
+                </div>
+                <div class="field-container">
+                    <label for="country-field">País de procedencia*</label>
+                    <select name="country" class="dropdown-field" id="country-field">
+                    </select>
+                </div>
+                <div class="field-container">
+                    <label for="size-field">Tamaño*</label>
+                    <select name="style" class="dropdown-field" id="size-field">
+                        <option value="Pinta">Pinta</option>
+                        <option value="Media pinta">Media pinta</option>
+                        <option value="Tercio">Tercio</option>
+                    </select>
+                </div>
+                <div class="field-container">
+                    <label for="format-field">Formato*</label>
+                    <select name="style" class="dropdown-field" id="format-field">
+                        <option value="Barril">Barril</option>
+                        <option value="Lata">Lata</option>
+                        <option value="Botella">Botella</option>
+                    </select>
+                </div>
+                <div class="field-container">
+                    <label for="alcohol-field">Porcentaje de alcohol*</label>
+                    <input type="number" class="text-field" id="alcohol-field" min="0" max="100">
+                </div>
+                <div class="field-container">
+                    <label for="ibu-field">Calificador de amargor (IBU)*</label>
+                    <input type="number" class="text-field" id="ibu-field" min="0">
+                </div>
+                <div class="field-container">
+                    <label for="color-field">Color*</label>
+                    <select name="style" class="dropdown-field" id="color-field">
+                        <option value="Dorado claro">Dorado claro</option>
+                        <option value="Amarillo dorado">Amarillo dorado</option>
+                        <option value="Ámbar claro">Ámbar claro</option>
+                        <option value="Marrón oscuro">Marrón oscuro</option>
+                        <option value="Negro opaco">Negro opaco</option>
+                    </select>
+                </div>
+                <button type="button" value="Alta cerveza" class="submit-button " id="alta-cerveza-button">
+                        Añadir cerveza
+                </button>
+                <p>* Obligatorio</p>
+            </div>
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/alta-cerveza.js"></script>
+        <script src="js/countries.js"></script>
+    </body>
+</html>
