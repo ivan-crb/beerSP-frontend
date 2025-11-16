@@ -2,7 +2,5 @@ Build:
 cordova build
 
 
-Probar:
+Run:
 cordova run android (con android studio abierto)
-
-Mirar logcat
