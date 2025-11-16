@@ -12,5 +12,6 @@ function onDeviceReady() {
     let imageElement = document.getElementById("profile-image")
 
     usernameElement.innerText = user.nombreUsuario
-    imageElement.src = `${user.foto}`
+    if (user.foto != null) imageElement.src = `${user.foto}`
+    else imageElement.classList.add("hidden")
 }
