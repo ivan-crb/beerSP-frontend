@@ -12,7 +12,9 @@ Requisitos:
     - Variable de entorno ANDROID_HOME con direccion a la carpeta Sdk root de Android
 
 Instrucciones:
+- Una vez:
 1. `npm -g install cordova`
 2. `cordova platform add android`
-3. `cordova build`
-4. `cordova run android` (con Android Studio abierto y un emulador ejecutándose)
+- Cada vez que se quiera ejecutar:
+4. `cordova build`
+5. `cordova run android` (con Android Studio abierto y un emulador ejecutándose)
