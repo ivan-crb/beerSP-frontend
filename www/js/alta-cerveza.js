@@ -33,17 +33,20 @@ function onDeviceReady() {
 
     submitButton.addEventListener("click", async () => {
         if (nameField.value == "" || foto == null || descriptionField.value == "" || alcoholField.value == "" || ibuField.value == "") {
-            navigator.notification.alert("Los campos obligatorios deben estar rellenados", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("Los campos obligatorios deben estar rellenados", nothing, "Campos no válidos", "Ok")
+            else alert("Los campos obligatorios deben estar rellenados")
             return
         }
 
         if (alcoholField.value < 0 || alcoholField.value > 100) {
-            navigator.notification.alert("El porcentaje de alcohol debe estar entre 0 y 100", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("El porcentaje de alcohol debe estar entre 0 y 100", nothing, "Campos no válidos", "Ok")
+            else alert("El porcentaje de alcohol debe estar entre 0 y 100")
             return
         }
 
         if (ibuField.value < 0) {
-            navigator.notification.alert("El calificador de amargor (IBU) debe ser a partir de 0", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("El calificador de amargor (IBU) debe ser a partir de 0", nothing, "Campos no válidos", "Ok")
+            else alert("El calificador de amargor (IBU) debe ser a partir de 0")
             return
         }
 
@@ -68,11 +71,13 @@ function onDeviceReady() {
         })
 
         if (res.status == 201) {
-            navigator.notification.alert("Cerveza creada con éxito", nothing, "Éxito", "Ok")
+            if (window.cordova) navigator.notification.alert("Cerveza creada con éxito", nothing, "Éxito", "Ok")
+            else alert("Cerveza creada con éxito")
             window.open("main-page.html", "_self")
         }
         else {
-            navigator.notification.alert("Hubo un error al crear la cerveza", nothing, "Error", "Ok")
+            if (window.cordova) navigator.notification.alert("Hubo un error al crear la cerveza", nothing, "Error", "Ok")
+            else alert("Hubo un error al crear la cerveza")
         }
     })
 
@@ -85,7 +90,9 @@ function onDeviceReady() {
     }
 
     let pictureFail = (err) => {
-        navigator.notification.alert("Hubo un error al seleccionar la imagen", nothing, "Error", "Ok")
+        if (window.cordova) navigator.notification.alert("Hubo un error al seleccionar la imagen", nothing, "Error", "Ok")
+        else alert("Hubo un error al seleccionar la imagen")
+        
     }
 }
 

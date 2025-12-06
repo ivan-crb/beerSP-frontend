@@ -11,17 +11,17 @@ function onDeviceReady() {
 
     let submitButton = document.getElementById("log-in-button")
 
-
     submitButton.addEventListener("click", async () => {
 
         let res = await fetch(`${baseURL}/usuarios/username/${usernameField.value}`)
-        let body = await res.json()
 
         if (res.status != 200 || body.contrasena != passwordField.value) {
-            navigator.notification.alert("Usuario o contraseña incorrecto", nothing, "Fallo al iniciar sesión", "Ok")
+            if (window.cordova) navigator.notification.alert("Usuario o contraseña incorrecto", nothing, "Fallo al iniciar sesión", "Ok")
+            else alert("Usuario o contraseña incorrecto")
             return
         }
         else {
+            let body = await res.json()
             sessionStorage.setItem('user', JSON.stringify(body))
             window.open("main-page.html", "_self")
         }

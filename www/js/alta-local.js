@@ -14,7 +14,8 @@ function onDeviceReady() {
 
     submitButton.addEventListener("click", async () => {
         if (nameField.value == "" || dirField.value == "null") {
-            navigator.notification.alert("Los campos obligatorios deben estar rellenados", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("Los campos obligatorios deben estar rellenados", nothing, "Campos no válidos", "Ok")
+            else alert("Los campos obligatorios deben estar rellenados")
             return
         }
 
@@ -31,11 +32,13 @@ function onDeviceReady() {
         })
 
         if (res.status == 201) {
-            navigator.notification.alert("Local creado con éxito", nothing, "Éxito", "Ok")
+            if (window.cordova) navigator.notification.alert("Local creado con éxito", nothing, "Éxito", "Ok")
+            else alert("Local creado con éxito")
             window.open("main-page.html", "_self")
         }
         else {
-            navigator.notification.alert("Hubo un error al crear el local", nothing, "Error", "Ok")
+            if (window.cordova) navigator.notification.alert("Hubo un error al crear el local", nothing, "Error", "Ok")
+            else alert("Hubo un error al crear el local")
         }
     })
 }
