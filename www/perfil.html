@@ -7,37 +7,48 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/main-page.css">
-        <title>BeerSP</title>
+        <title>BeerSP - Perfil</title>
     </head>
     <body>
         <div class="app">
             <div class="container">
-                <h1 class="title">BeerSP</h1>
+                <h1 class="title">Perfil</h1>
                 <div class="panel-container">
                     <div class="panel">
-                        <h3 class="panel-title">Perfil</h3>
                         <div class="inner-panel">
                             <img id="profile-image">
-                            <p id="profile-username"></p>
+                        </div>
+                        <h3>Nombre de usuario</h3>
+                        <p id="profile-username"></p>
+                        <h3>Correo</h3>
+                        <p id="profile-email"></p>
+                        <h3>Nombre</h3>
+                        <p id="profile-name"></p>
+                        <h3>Apellidos</h3>
+                        <p id="profile-surname"></p>
+                        <h3>Fecha de nacimiento</h3>
+                        <p id="profile-birthdate"></p>
+                        <h3>Procedencia</h3>
+                        <p id="profile-origin"></p>
+                        <h3>Introducción</h3>
+                        <p id="profile-intro"></p>
+                    </div>
+                    <div class="panel">
+                        <h3 class="panel-title">Degustaciones recientes</h3>
+                        <div class="inner-panel" id="degustaciones-recientes">
                         </div>
                     </div>
                     <div class="panel">
-                        <h3 class="panel-title">Actividad reciente</h3>
-                        <div class="inner-panel">
+                        <h3 class="panel-title">Locales recientes</h3>
+                        <div class="inner-panel" id="locales-recientes">
                         </div>
                     </div>
                     <div class="panel">
-                        <h3 class="panel-title">Cervezas favoritas</h3>
-                        <div class="inner-panel">
-                        </div>
-                    </div>
-                    <div class="panel">
-                        <h3 class="panel-title">Últimos galardones</h3>
+                        <h3 class="panel-title">Solicitudes de amistad pendientes</h3>
                         <div class="inner-panel">
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="footer-menu">
                 <button>
                     <a href="main-page.html">Inicio</a>
@@ -48,9 +59,8 @@
                 </button>
                 <button>Buscar</button>
             </div>
-            <a class="alta-degustacion" href="alta-degustacion.html">Registrar degustacion</a>
         </div>
         <script src="cordova.js"></script>
-        <script src="js/main-page.js"></script>
+        <script src="js/perfil.js"></script>
     </body>
 </html>

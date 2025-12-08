@@ -34,7 +34,7 @@ function onDeviceReady() {
         if (res.status == 201) {
             if (window.cordova) navigator.notification.alert("Local creado con éxito", nothing, "Éxito", "Ok")
             else alert("Local creado con éxito")
-            window.open("main-page.html", "_self")
+            window.open("alta-degustacion.html", "_self")
         }
         else {
             if (window.cordova) navigator.notification.alert("Hubo un error al crear el local", nothing, "Error", "Ok")

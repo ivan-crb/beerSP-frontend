@@ -15,13 +15,18 @@ function onDeviceReady() {
 
         let res = await fetch(`${baseURL}/usuarios/username/${usernameField.value}`)
 
-        if (res.status != 200 || body.contrasena != passwordField.value) {
+        if (res.status != 200) {
+            if (window.cordova) navigator.notification.alert("Usuario o contraseña incorrecto", nothing, "Fallo al iniciar sesión", "Ok")
+            else alert("Usuario o contraseña incorrecto")
+            return
+        }
+        let body = await res.json()
+        if (body.contrasena != passwordField.value) {
             if (window.cordova) navigator.notification.alert("Usuario o contraseña incorrecto", nothing, "Fallo al iniciar sesión", "Ok")
             else alert("Usuario o contraseña incorrecto")
             return
         }
         else {
-            let body = await res.json()
             sessionStorage.setItem('user', JSON.stringify(body))
             window.open("main-page.html", "_self")
         }

@@ -72,6 +72,11 @@ body {
     height: 10vh;
     display: flex;
 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
     button {
         flex: 1 1 0px;
         overflow: hidden;
@@ -95,6 +100,46 @@ body {
     color: black;
 }
 
+.alta-degustacion {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+}
+
 .hidden {
     display: none;
+}
+
+button a {
+    text-decoration: none;
+    color: black
+}
+
+h3 {
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 5px;
+    border: 5px solid var(--secondary-color);
+    box-sizing: border-box;
+    margin-top: 10px;
+
+    p {
+        margin: 0
+    }
+}
+
+.highlight {
+    font-size: 15px;
+    font-weight: bold;
 }

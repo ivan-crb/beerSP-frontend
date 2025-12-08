@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #2E3532;
+    --primary-color: #2e3532;
     --secondary-color: #7E9181;
     --tertiary-color: #C7CEDB;
     --quaternary-color: #A0AAB2;
@@ -95,4 +95,42 @@ p {
     color: white;
     border-color: darkgreen;
     padding: 5px 12px;
+}
+
+p {
+    margin: 0;
+}
+
+.beer-search-results {
+    background-color: var(--quaternary-color);
+}
+
+.beer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    border: 2px solid var(--primary-color);
+}
+
+.beer-name {
+    margin: 0;
+}
+
+.beer-description {
+    margin: 0;
+}
+
+.beer-mean {
+    margin: 0
+}
+
+.beer-image {
+    width: 50px;
+    height: 50px;
+}
+
+.highlight {
+    font-size: 15px;
+    font-weight: bold;
 }

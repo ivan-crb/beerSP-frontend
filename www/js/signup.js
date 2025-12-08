@@ -32,7 +32,8 @@ function onDeviceReady() {
             submitButton.classList.remove("hidden")
         }
         else {
-            navigator.notification.alert("Tienes que ser mayor de edad para crear una cuenta en BeerSP", nothing, "Verificación de la edad", "Ok")
+            if (window.cordova) navigator.notification.alert("Tienes que ser mayor de edad para crear una cuenta en BeerSP", nothing, "Verificación de la edad", "Ok")
+            else alert("Tienes que ser mayor de edad para crear una cuenta en BeerSP")
             window.open("index.html", "_self")
         }
     })
@@ -45,24 +46,28 @@ function onDeviceReady() {
     submitButton.addEventListener("click", async () => {
         if (usernameField.value == "" || passwordField.value == "" ||
                 passwordRepeatField.value == "" || emailField.value == "") {
-            navigator.notification.alert("Los campos obligatorios deben estar rellenados", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("Los campos obligatorios deben estar rellenados", nothing, "Campos no válidos", "Ok")
+            else alert("Los campos obligatorios deben estar rellenados")
             return
         }
 
         let res = await fetch(`${baseURL}/usuarios/username/${usernameField.value}`)
         if (res.status != 404) {
-            navigator.notification.alert("Ya existe un usuario con ese nombre de usuario", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("Ya existe un usuario con ese nombre de usuario", nothing, "Campos no válidos", "Ok")
+            else alert("Ya existe un usuario con ese nombre de usuario")
             return
         }
 
         if (passwordField.value != passwordRepeatField.value) {
-            navigator.notification.alert("Las contraseñas deben coincidir", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("Las contraseñas deben coincidir", nothing, "Campos no válidos", "Ok")
+            else alert("Las contraseñas deben coincidir")
             return
         }
 
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(emailField.value)) {
-            navigator.notification.alert("El correo electrónico debe tener un formato válido", nothing, "Campos no válidos", "Ok")
+            if (window.cordova) navigator.notification.alert("El correo electrónico debe tener un formato válido", nothing, "Campos no válidos", "Ok")
+            else alert("El correo electrónico debe tener un formato válido")
             return
         }
 
@@ -85,11 +90,13 @@ function onDeviceReady() {
         })
 
         if (res.status == 201) {
-            navigator.notification.alert("Cuenta creada con éxito", nothing, "Bienvenido", "Ok")
+            if (window.cordova) navigator.notification.alert("Cuenta creada con éxito", nothing, "Bienvenido", "Ok")
+            else alert("Cuenta creada con éxito")
             window.open("index.html", "_self")
         }
         else {
-            navigator.notification.alert("Hubo un error al crear la cuenta", nothing, "Error", "Ok")
+            if (window.cordova) navigator.notification.alert("Hubo un error al crear la cuenta", nothing, "Error", "Ok")
+            else alert("Hubo un error al crear la cuenta")
         }
     })
 
@@ -102,7 +109,8 @@ function onDeviceReady() {
     }
 
     let pictureFail = (err) => {
-        navigator.notification.alert("Hubo un error al seleccionar la imagen", nothing, "Error", "Ok")
+        if (window.cordova) navigator.notification.alert("Hubo un error al seleccionar la imagen", nothing, "Error", "Ok")
+        else alert("Hubo un error al seleccionar la imagen")
     }
 }
 

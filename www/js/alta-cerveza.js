@@ -73,7 +73,7 @@ function onDeviceReady() {
         if (res.status == 201) {
             if (window.cordova) navigator.notification.alert("Cerveza creada con éxito", nothing, "Éxito", "Ok")
             else alert("Cerveza creada con éxito")
-            window.open("main-page.html", "_self")
+            window.open("alta-degustacion.html", "_self")
         }
         else {
             if (window.cordova) navigator.notification.alert("Hubo un error al crear la cerveza", nothing, "Error", "Ok")

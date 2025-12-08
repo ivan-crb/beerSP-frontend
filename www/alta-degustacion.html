@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Registrar degustación</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="container">
+                <h1 class="title">BeerSP</h1>
+                <h3 class="subtitle">Registrar degustación</h3>
+                <div class="field-container">
+                    <label for="beer-field">Cerveza*</label>
+                    <div style="display: flex; flex-direction: row;">
+                        <input type="text" class="text-field" id="beer-field">
+                        <button type="button" value="buscar" class="submit-button" id="search-button">
+                            Buscar
+                        </button>
+                    </div>
+                    <div class="beer-search-results">
+                    </div>
+                    <button type="button" value="alta-cerveza" class="submit-button" id="alta-cerveza" style="width: 100%; margin-top: 5px;">
+                        Dar de alta una cerveza
+                    </button>
+                </div>
+                <div class="field-container">
+                    <label for="score-field">Calificación (de 0 a 5)</label>
+                    <input type="number" class="text-field" id="score-field" min="0" max="5">
+                </div>
+                <div class="field-container">
+                    <label for="local-field" id="local-field-label">Locales recientes</label>
+                    <select name="local" class="dropdown-field" id="local-field">
+                    </select>
+                    <button type="button" value="alta-cerveza" class="submit-button" id="local-field-button" style="width: 100%; margin-top: 5px;">
+                        Ver todos locales
+                    </button>
+                    <button type="button" value="alta-local" class="submit-button" id="alta-local" style="width: 100%; margin-top: 5px;">
+                        Dar de alta un local
+                    </button>
+                </div>
+                <div class="field-container">
+                    <label for="country-field">País</label>
+                    <select name="country" class="dropdown-field" id="country-field">
+                    </select>
+                </div>
+                <button type="button" value="Alta degustacion" class="submit-button " id="alta-degustacion-button">
+                        Añadir degustación
+                </button>
+                <p>* Obligatorio</p>
+            </div>
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/alta-degustacion.js"></script>
+        <script src="js/countries.js"></script>
+    </body>
+</html>
