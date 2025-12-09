@@ -85,26 +85,8 @@ body {
     }
 }
 
-
-.placeholder-alta-cerveza {
-    position: absolute;
-    bottom: 20%;
-    left: 10%;
-    color: black;
-}
-
-.placeholder-alta-local {
-    position: absolute;
-    bottom: 20%;
-    right: 10%;
-    color: black;
-}
-
 .alta-degustacion {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: auto;
     color: black;
 }
 
