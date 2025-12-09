@@ -23,12 +23,16 @@ async function onDeviceReady() {
     else imageElement.classList.add("hidden")
     usernameElement.innerText = user.nombreUsuario
     emailElement.innerText = user.email
-    nameElement.innerText = user.nombre
-    surnameElement.innerText = user.apellidos
+    if (user.nombre != null) nameElement.innerText = user.nombre
+    else nameElement.classList.add("hidden")
+    if (user.apellidos != null) surnameElement.innerText = user.apellidos
+    else surnameElement.classList.add("hidden")
     let birthdateArray = user.fechaNacimiento.split("-")
     birthdateElement.innerText = birthdateArray[2] + "/" + birthdateArray[1] + "/" + birthdateArray[0]
-    originElement.innerText = user.procedencia
-    introElement.innerText = user.introduccion
+    if (user.procedencia != null) originElement.innerText = user.procedencia
+    else originElement.classList.add("hidden")
+    if (user.introduccion != null) introElement.innerText = user.introduccion
+    else introElement.classList.add("hidden")
 
     let res = await fetch(`${baseURL}/degustaciones/usuarios/${user.id}/ultimos`, {
         method: "GET"
@@ -53,7 +57,8 @@ async function onDeviceReady() {
     
         let score = document.createElement("div")
         score.classList.add("tasting-score")
-        score.innerText = `Calificación: ${body[i].calificacion}`
+        if (body[i].calificacion != null) score.innerText = `Calificación: ${body[i].calificacion}`
+        else score.classList.add("hidden")
 
         let date = document.createElement("div")
         date.classList.add("tasting-date")
